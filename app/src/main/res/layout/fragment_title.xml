@@ -38,10 +38,44 @@
             android:textColor="@color/colorAccent"
             android:textSize="@dimen/button_text_size"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/rulesButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/titleImage" />
+
+        <Button
+            android:id="@+id/rulesButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/horizontal_margin"
+            android:layout_marginEnd="@dimen/horizontal_margin"
+            android:paddingStart="@dimen/button_padding"
+            android:paddingEnd="@dimen/button_padding"
+            android:text="Rules"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/button_text_size"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/aboutButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/playButton" />
+
+        <Button
+            android:id="@+id/aboutButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/horizontal_margin"
+            android:layout_marginEnd="@dimen/horizontal_margin"
+            android:paddingStart="@dimen/button_padding"
+            android:paddingEnd="@dimen/button_padding"
+            android:text="About"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/button_text_size"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rulesButton" />
 
         <ImageView
             android:id="@+id/titleImage"
@@ -49,8 +83,8 @@
             android:layout_height="@dimen/image_header_height"
             android:layout_marginStart="@dimen/horizontal_margin"
             android:layout_marginEnd="@dimen/horizontal_margin"
+            android:layout_marginTop="100dp"
             android:scaleType="fitCenter"
-            app:layout_constraintBottom_toTopOf="@+id/playButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
