@@ -1,12 +1,12 @@
 package com.example.android.navigation
 
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.NavAction
 import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI
 import com.example.android.navigation.databinding.FragmentTitleBinding
 
 /**
@@ -35,7 +35,26 @@ class TitleFragment : Fragment() {
             it.findNavController().navigate(R.id.action_titleFragment_to_gameFragment)
         }
 
+        // enable option menu
+        setHasOptionsMenu(true)
+
         return binding.root
     }
 
+    // add and inflate option menu to this fragment
+    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater?.inflate(R.menu.options_menu, menu)
+    }
+
+    // handle action when select the menu
+    /**
+     * About method : onNavDestinationSelected(item: [MenuItem], navController: [NavController])
+     * It assumes the menu item id matches a valid action id or destination id to be navigated to.
+     * If the item's id match with the fragment's id, then the app will be navigate to that fragment.
+     */
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        return NavigationUI.onNavDestinationSelected(item!!, view!!.findNavController())
+                || super.onOptionsItemSelected(item)
+    }
 }
